@@ -62,6 +62,7 @@ module.exports = {
     ],
   },
   devServer: {
+    disableHostCheck: true,
     writeToDisk: true,
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
@@ -85,6 +86,6 @@ module.exports = {
       template: 'public/index.html',
       filename: 'index.html',
       cache: true,
-    }),
+    })
   ],
 };
