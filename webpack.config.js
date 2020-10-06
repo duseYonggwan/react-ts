@@ -2,8 +2,15 @@ const fs = require('fs');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// import Environment from './src/helpers/environment';
+// const Enums = require('./src/enums');
 
-const now = Date.now();
+// const Environment = require('@/helpers/environment');
+// const file = await fs.readFileSync('./src/helpers/environment.ts', {
+// });
+// process.exit();
+
+// const now = Date.now();
 
 if (process.env.NODE_ENV === 'production') {
   fs.appendFileSync(
@@ -18,7 +25,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 module.exports = {
-  mode: process.env.NODE_ENV === 'development' ? 'development' : 'production',
+  mode: process.env.NODE_ENV,
   // Webpack의 출력물에서 디버깅을 하기위해 소스 맵을 허용합니다.
   devtool: 'source-map',
   entry: path.resolve(__dirname, 'src'),
@@ -63,12 +70,12 @@ module.exports = {
   },
   devServer: {
     disableHostCheck: true,
-    writeToDisk: true,
-    contentBase: path.join(__dirname, 'dist'),
+    writeToDisk: (filePath) => /\.(jpg|jpeg|svg|gif|png)$/.test(filePath),
+    contentBase: path.join(__dirname, 'build'),
     compress: true,
     port: process.env.port || 3000,
     open: false,
-    host: 'biz.local.com',
+    host: process.env.APP_ENV,
     hot: true,
   },
   plugins: [
@@ -87,6 +94,6 @@ module.exports = {
       template: 'public/index.html',
       filename: 'index.html',
       cache: true,
-    })
+    }),
   ],
 };

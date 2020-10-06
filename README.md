@@ -20,13 +20,15 @@
 </ol>
 
 ## Settings
+
 add host `sudo vim /etc/hosts`
+
 ```sh
 127.0.0.1       biz.local.com
 ```
 
-
 ## Run project
+
 ```sh
 nvm use 12 # nvm을 사용할경우, 방어코드
 npm install & npm run dev
@@ -47,6 +49,19 @@ npm run build:prod
 - webpack dev server with [HMR][hmr-url]
 - eslint + prettier (auto formatting)
 - vscode setting file (theme, etc configs)
+
+## Folder structure
+
+```
+├── build                   # Compiled files (distributions)
+├── docs                    # Documentation files (alternatively `doc`)
+├── src                     # Source files (alternatively `lib` or `app`)
+│   ├─
+│   ├─
+│   └─
+├── types                   # internal type definition root folder
+└──
+```
 
 ### VScode custom setting
 

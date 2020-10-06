@@ -10,7 +10,7 @@ const App = (): JSX.Element => {
   const [active, setActive] = React.useState(false);
   return (
     <DefaultLayout>
-      <h1>피터팬 비즈 world! {About}</h1>
+      <h1>피터팬 비 즈 world! {About}</h1>
       <Button onClick={(ev) => setActive(!active)} color="primary">
         Hello!
       </Button>
