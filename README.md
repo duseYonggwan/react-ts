@@ -8,48 +8,52 @@
 
 [![node][node]][node-url] [![npm][npm]][npm-url] [![typescript][typescript]][typescript-url] [![react][react]][react-url]
 
-# A simple boilerplate for frontend
+# 피터팬 비즈 프론트서비스
 
-- Self configuration A-Z
-
-## Main stack
+## Dev stack
 
 <ol>
   <li>react.js</li>
-  <li>typescript</li>
+  <li>typescript 4</li>
   <li>css-in-js (jss)</li>
   <li>material-ui</li>
 </ol>
 
-## run project
-
+## Settings
+add host `sudo vim /etc/hosts`
 ```sh
+127.0.0.1       biz.local.com
+```
+
+
+## Run project
+```sh
+nvm use 12 # nvm을 사용할경우, 방어코드
 npm install & npm run dev
 ```
 
-then open `http://localhost:3000/`
+then open `http://biz.local.com:3000/`
 
-## build
+## Build
 
 ```sh
+nvm use 12 # nvm을 사용할경우, 방어코드
 npm run build:dev
 npm run build:prod
 ```
 
-## What's includeds?
+## Included helper tools
 
 - webpack dev server with [HMR][hmr-url]
 - eslint + prettier (auto formatting)
 - vscode setting file (theme, etc configs)
-- build optimization (next job)
-  chunk/tree-shake/minify
 
 ### VScode custom setting
 
 [.vscode/settings.json](./docs/vscode_settings.json.md)
 VSCode Theme: `One Dark Pro`
 
-### My VScode extensions
+### Recommends VScode extensions
 
 ![My VScode extensions](docs/extensions_capture.png)
 
