@@ -68,6 +68,7 @@ module.exports = {
     compress: true,
     port: process.env.port || 3000,
     open: false,
+    host: 'biz.local.com',
     hot: true,
   },
   plugins: [
