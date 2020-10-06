@@ -1,3 +1,4 @@
+require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -13,15 +14,21 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // const now = Date.now();
 
 if (process.env.NODE_ENV === 'production') {
-  fs.appendFileSync(
-    'logs/build.log',
-    `
-        Nodejs Process version: ${process.version}
-        Current directory: ${__dirname}
-        Node ENV: ${process.env.NODE_ENV}
-        Build excute at: ${new Date()}
-    `
-  );
+  const buildLogPath = path.resolve('logs', 'build.log');
+  const buildLogString = `
+    Nodejs Process version: ${process.version}
+    Current directory: ${__dirname}
+    APP ENV: ${process.env.APP_ENV}
+    Node ENV: ${process.env.NODE_ENV}
+    Build excute at: ${new Date()}
+  `;
+  if (!fs.existsSync('logs')) fs.mkdirSync('logs');
+  if (!fs.existsSync(buildLogPath)) {
+    return fs.writeFileSync(buildLogPath, buildLogString, {
+      encoding: 'utf-8',
+    });
+  }
+  fs.appendFileSync(buildLogPath, buildLogString);
 }
 
 module.exports = {
