@@ -82,7 +82,7 @@ module.exports = {
     compress: true,
     port: process.env.port || 3000,
     open: false,
-    host: process.env.APP_ENV,
+    host: process.env.APP_HOST,
     hot: true,
   },
   plugins: [
