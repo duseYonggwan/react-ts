@@ -6,6 +6,7 @@
 module.exports = {
   // trailingComma: 'all|none',
   singleQuote: true,
-  endOfLine: 'auto'
+  endOfLine: 'auto',
+  jsxBracketSameLine: true
   // printWidth: 20,
 };

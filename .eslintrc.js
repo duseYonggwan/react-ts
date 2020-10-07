@@ -28,6 +28,7 @@ module.exports = {
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
     // '@typescript-eslint/explicit-function-return-type': ['off'],
     '@typescript-eslint/no-var-requires': 0,
+    'react/prop-types': 'off',
   },
   // overrides: [
   //   {

@@ -17,6 +17,7 @@
   <li>typescript 4</li>
   <li>css-in-js (jss)</li>
   <li>material-ui</li>
+  <li>storybook</li>
 </ol>
 
 ## Settings
